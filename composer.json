@@ -1,0 +1,44 @@
+{
+    "name": "wickedsoft/laravel-virtualizor",
+    "description": "Virtualizor for Laravel 8.x",
+    "keywords": ["virtualizor", "laravel"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0|^7.4|^7.3|^7.2",
+        "laravel/framework": "^8.0",
+        "guzzlehttp/guzzle": "^7.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^9.3.3",
+        "orchestra/testbench": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "wickedsoft\\Virtualizor\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "wickedsoft\\Virtualizor\\tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "wickedsoft\\Virtualizor\\ServiceProvider"
+            ],
+            "aliases": {
+                "Virtualizor": "wickedsoft\\Virtualizor\\Facade"
+            }
+        }
+    }
+}
